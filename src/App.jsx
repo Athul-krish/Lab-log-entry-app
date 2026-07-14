@@ -1,7 +1,10 @@
+import AddStudent from "./components/AddStudent"
+
 function App() {
 
   return (
     <>
+    <AddStudent/>
     </>
   )
 }
