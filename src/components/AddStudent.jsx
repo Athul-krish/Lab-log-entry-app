@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import Navbar from "./NavBar";
 
 const AddStudent = () => {
   const [student, setStudent] = useState({
@@ -18,8 +19,8 @@ const AddStudent = () => {
   };
 
   const submit = () => {
-    console.log(input);
-    axios.post("http://localhost:3000/add-entry",input).then(
+    console.log(student);
+    axios.post("http://localhost:3000/add-entry",student).then(
         (res)=>{
             console.log(res.data);
             alert("Entry Added Succuessfully")
@@ -30,6 +31,8 @@ const AddStudent = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col col-12 col-sm-10 col-md-8 col-lg-6">
@@ -144,6 +147,7 @@ const AddStudent = () => {
         </div>
       </div>
     </div>
+ </>
   );
 };
 
